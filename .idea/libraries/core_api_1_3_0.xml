@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="core-api-1.3.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.optimizely.ab/core-api/1.3.0/8ff512a693ab1f11e27067624362d1116babdf2d/core-api-1.3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.optimizely.ab/core-api/1.3.0/799387028844455a18e6cf5827d5bdd6ca1741e3/core-api-1.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
