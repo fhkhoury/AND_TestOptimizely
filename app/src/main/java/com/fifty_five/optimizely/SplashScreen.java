@@ -33,55 +33,9 @@ public class SplashScreen extends AppCompatActivity {
                 // this is the control variation, it will show if we are not able to determine which variation to bucket the user into
                 Intent intent = new Intent(myApplication.getBaseContext(), MainActivity.class);
 
-                // Activate user and start activity based on the variation we get.
-                // You can pass in any string for the user ID. In this example we just use a convenience method to generate a random one.
-                String userId = myApplication.getAnonUserId();
-                Variation backgroundVariation = optimizelyManager.getOptimizely().activate("my_experiment", userId);
-
-                // variation is nullable so we should check for null values
-                if (backgroundVariation != null) {
-                    // Show activity based on the variation the user got bucketed into
-                    if (backgroundVariation.getKey().equals("main_a")) {
-                        intent = new Intent(myApplication.getBaseContext(), VariationMainActivityA.class);
-                    } else if (backgroundVariation.getKey().equals("main_b")) {
-                        intent = new Intent(myApplication.getBaseContext(), VariationMainActivityB.class);
-                    }
-                }
-
                 startActivity(intent);
+                finish();
             }
         });
-
-//        OptimizelyManager optimizelyManager = OptimizelyManager.builder("8264922460")
-//                .withEventHandlerDispatchInterval(30, TimeUnit.SECONDS)
-//                .withDataFileDownloadInterval(30, TimeUnit.SECONDS)
-//                .build();
-//
-//        optimizelyManager.initialize(this, new OptimizelyStartListener() {
-//            @Override
-//            public void onStart(OptimizelyClient optimizely) {
-//                Intent intent;
-//            //Track code (step #8)
-//                // Anonymous device id
-//                Variation variation = optimizely.activate("my_experiment", UUID.randomUUID().toString());
-//                if (variation != null) {
-//                    if (variation.is("main_a")) {
-//                        intent = new Intent(getApplicationContext(), VariationMainActivityA.class);
-//                    }
-//                    else {
-//                        intent = new Intent(getApplicationContext(), VariationMainActivityB.class);
-//                    }
-//                } else {
-//                    intent = new Intent(getApplicationContext(), MainActivity.class);
-//                }
-//
-//            //Track code (step #8)
-//                optimizely.track("myMetric", "currentUser");
-//
-//                startActivity(intent);
-//                finish();
-//            }
-//
-//        });
     }
 }
